@@ -1,0 +1,33 @@
+unisims
+vivado_*
+syntax_*
+simulation/*
+simulation_data/*
+quartus_logs/ *
+www/*
+constraints/*
+ise_*
+attic/*
+hardware_tests/*
+IVERILOG_INCLUDE.v
+*DEBUG_VDT*
+*.kate-swp
+*.old
+*.new
+*.bad
+*.pyc
+*.pickle
+*.tmp
+debug/*
+html/*
+man/*
+.project
+.pydevproject
+#copied from .eclipse_project_setup, can be used to import workin set to limit warnings reported
+workingSet.psf
+*.fst
+cocotb/Makefile
+cocotb/sim_build
+cocotb/results.xml
+*.directory
+/html.tar.gz

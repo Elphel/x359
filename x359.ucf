@@ -1,0 +1,359 @@
+NET "RUN"                LOC = "C2" | IOSTANDARD = "LVCMOS25";
+
+NET "SDLDM"              LOC = "M8" | IOSTANDARD = "SSTL2_I";
+NET "SDUDM"              LOC = "T8" | IOSTANDARD = "SSTL2_I" ;
+
+NET "SDWE"               LOC = "M7" | IOSTANDARD = "SSTL2_I" ;
+NET "SDCAS"              LOC = "N7" | IOSTANDARD = "SSTL2_I" ;
+NET "SDRAS"              LOC = "M6" | IOSTANDARD = "SSTL2_I" ;
+
+NET "SDA<0>"             LOC = "P1" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<1>"             LOC = "K3" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<2>"             LOC = "M1" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<3>"             LOC = "K2" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<4>"             LOC = "T4" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<5>"             LOC = "M4" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<6>"             LOC = "T5" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<7>"             LOC = "P5" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<8>"             LOC = "N5" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<9>"             LOC = "R6" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<10>"            LOC = "N1" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<11>"            LOC = "P6" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<12>"            LOC = "P7" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<13>"            LOC = "P2" | IOSTANDARD = "SSTL2_I" ;
+NET "SDA<14>"            LOC = "L4" | IOSTANDARD = "SSTL2_I" ;
+
+NET "SDD<0>"             LOC = "R14" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<1>"             LOC = "T12" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<2>"             LOC = "N12" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<3>"             LOC = "N10" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<4>"             LOC = "R11" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<5>"             LOC = "N9" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<6>"             LOC = "M9" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<7>"             LOC = "L8" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<8>"             LOC = "P9" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<9>"             LOC = "P10" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<10>"            LOC = "M10" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<11>"            LOC = "P11" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<12>"            LOC = "P12" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<13>"            LOC = "R13" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<14>"            LOC = "T13" | IOSTANDARD = "SSTL2_I" ;
+NET "SDD<15>"            LOC = "P14" | IOSTANDARD = "SSTL2_I" ;
+
+NET "UDQS"               LOC = "P8" | IOSTANDARD = "SSTL2_I" ;
+NET "LDQS"               LOC = "N8" | IOSTANDARD = "SSTL2_I" ;
+
+NET "PXD<0>"             LOC = "G3" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "PXD<1>"             LOC = "H5" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "PXD<2>"             LOC = "G2" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "PXD<3>"             LOC = "H4" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "PXD<4>"             LOC = "J3" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "PXD<5>"             LOC = "J2" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "PXD<6>"             LOC = "J4" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "PXD<7>"             LOC = "J1" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "PXD<8>"             LOC = "K1" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "PXD<9>"             LOC = "L3" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "DCLK"               LOC = "E4" | IOSTANDARD = "LVCMOS25" | CLOCK_DEDICATED_ROUTE = FALSE;
+NET "BPF"                LOC = "F4" | IOSTANDARD = "LVCMOS25";
+NET "HACT"               LOC = "E3" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "VACT"               LOC = "G4" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "MRST"               LOC = "K5" | IOSTANDARD = "LVCMOS25";
+NET "ARO"                LOC = "N2" | IOSTANDARD = "LVCMOS25";
+NET "ARST"               LOC = "L5" | IOSTANDARD = "LVCMOS25";
+NET "SCL0"               LOC = "H6" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "SDA0"               LOC = "J5" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "CNVSYNC"            LOC = "B1" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+NET "CNVCLK"             LOC = "B2" | IOSTANDARD = "LVCMOS25" | SLEW = "SLOW"  | DRIVE = 4;
+#----------
+NET "PXD1<0>"            LOC = "R16" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<1>"            LOC = "R15" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<2>"            LOC = "F13" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<3>"            LOC = "F12" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<4>"            LOC = "G13" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<5>"            LOC = "H12" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<6>"            LOC = "H11" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<7>"            LOC = "J14" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<8>"            LOC = "J13" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<9>"            LOC = "K14" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<10>"           LOC = "K12" | IOSTANDARD = "LVCMOS25";
+NET "PXD1<11>"           LOC = "K13" | IOSTANDARD = "LVCMOS25";
+NET "PX_DCLK1"           LOC = "D14" | IOSTANDARD = "LVCMOS25";
+NET "PX_BPF1"            LOC = "E11" | IOSTANDARD = "LVCMOS25";
+NET "PX_HACT1"           LOC = "D15" | IOSTANDARD = "LVCMOS25";
+NET "PX_VACT1"           LOC = "E13" | IOSTANDARD = "LVCMOS25";
+NET "PX_MRST1"           LOC = "N15" | IOSTANDARD = "LVCMOS25";
+NET "PX_ARO1"            LOC = "P15" | IOSTANDARD = "LVCMOS25";
+NET "PX_ARST1"           LOC = "N14" | IOSTANDARD = "LVCMOS25";
+NET "PX_SCL1"            LOC = "L13" | IOSTANDARD = "LVCMOS25";
+NET "PX_SDA1"            LOC = "L12" | IOSTANDARD = "LVCMOS25";
+NET "SENSPGM1"           LOC = "P16" | IOSTANDARD = "LVCMOS25";
+#----------
+NET "PXD2<0>"            LOC = "M16" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<1>"            LOC = "N16" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<2>"            LOC = "B14" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<3>"            LOC = "C16" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<4>"            LOC = "C15" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<5>"            LOC = "E16" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<6>"            LOC = "F15" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<7>"            LOC = "F14" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<8>"            LOC = "G16" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<9>"            LOC = "G15" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<10>"           LOC = "G14" | IOSTANDARD = "LVCMOS25";
+NET "PXD2<11>"           LOC = "H15" | IOSTANDARD = "LVCMOS25";
+NET "PX_DCLK2"           LOC = "A14" | IOSTANDARD = "LVCMOS25";
+NET "PX_BPF2"            LOC = "A12" | IOSTANDARD = "LVCMOS25";
+NET "PX_HACT2"           LOC = "A13" | IOSTANDARD = "LVCMOS25";
+NET "PX_VACT2"           LOC = "B13" | IOSTANDARD = "LVCMOS25";
+NET "PX_MRST2"           LOC = "K16" | IOSTANDARD = "LVCMOS25";
+NET "PX_ARO2"            LOC = "L15" | IOSTANDARD = "LVCMOS25";
+NET "PX_ARST2"           LOC = "K15" | IOSTANDARD = "LVCMOS25";
+NET "PX_SCL2"            LOC = "H14" | IOSTANDARD = "LVCMOS25";
+NET "PX_SDA2"            LOC = "J16" | IOSTANDARD = "LVCMOS25";
+NET "SENSPGM2"           LOC = "L14" | IOSTANDARD = "LVCMOS25";
+#----------
+NET "PXD3<0>"            LOC = "E10" | IOSTANDARD = "LVCMOS25";
+NET "PXD3<1>"            LOC = "F9"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<2>"            LOC = "D7"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<3>"            LOC = "C7"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<4>"            LOC = "A7"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<5>"            LOC = "B7"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<6>"            LOC = "E8"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<7>"            LOC = "C8"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<8>"            LOC = "D8"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<9>"            LOC = "A9"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<10>"           LOC = "D9"  | IOSTANDARD = "LVCMOS25";
+NET "PXD3<11>"           LOC = "E9"  | IOSTANDARD = "LVCMOS25";
+NET "PX_DCLK3"           LOC = "A5"  | IOSTANDARD = "LVCMOS25";
+NET "PX_BPF3"            LOC = "A4"  | IOSTANDARD = "LVCMOS25";
+NET "PX_HACT3"           LOC = "C6"  | IOSTANDARD = "LVCMOS25";
+NET "PX_VACT3"           LOC = "B6"  | IOSTANDARD = "LVCMOS25"; 
+NET "PX_MRST3"           LOC = "C11" | IOSTANDARD = "LVCMOS25";
+NET "PX_ARO3"            LOC = "D10" | IOSTANDARD = "LVCMOS25";
+NET "PX_ARST3"           LOC = "B11" | IOSTANDARD = "LVCMOS25";
+NET "PX_SCL3"            LOC = "A10" | IOSTANDARD = "LVCMOS25";
+NET "PX_SDA3"            LOC = "B10" | IOSTANDARD = "LVCMOS25";
+NET "SENSPGM3"           LOC = "F8"  | IOSTANDARD = "LVCMOS25";
+#----------
+
+NET "AUXSCL"            LOC = "C4" | IOSTANDARD = "LVCMOS25";
+NET "AUXSDA"            LOC = "B4" | IOSTANDARD = "LVCMOS25";
+
+NET "CLK2"               LOC = "C9";
+NET "CLK1"               LOC = "B8";
+NET "CLK0"               LOC = "A8" | CLOCK_DEDICATED_ROUTE = FALSE;
+
+NET "SDCLK"              LOC = "R2" | IOSTANDARD = DIFF_SSTL2_I; 
+NET "SDCLK_FB"           LOC = "R3" | IOSTANDARD = DIFF_SSTL2_I; 
+NET "SDNCLK"             LOC = "R1" | IOSTANDARD = DIFF_SSTL2_I; 
+NET "SDNCLK_FB"          LOC = "T3" | IOSTANDARD = DIFF_SSTL2_I; 
+
+NET "SDCLKE"             LOC = "N6" | IOSTANDARD = "SSTL2_I";
+
+NET "sclk0" TNM_NET = "TNM_SCLK0";
+NET "pclk" TNM_NET = "TNM_PCLK";
+NET "DCLK" TNM_NET = "TNM_DCLK";
+
+#NET "*gclk_hact" TNM_NET = "GCLK_HACT";
+#NET "*gclk_data" TNM_NET = "GCLK_DATA";
+
+TIMESPEC "TS_DCLK" = PERIOD "TNM_DCLK" 9.5 ns HIGH 50 %;
+NET "i2c_rdat_*" TIG;
+
+NET "sp0_clk"     TNM_NET = "TNM_SP0_GCLK_IDATA";
+NET "i_sp0/en_idata"   TNM_NET = "TNM_SP0_EN_IDATA";
+TIMESPEC "TS_SP0_SCLK0_GCLK_IDATA" = FROM "TNM_SCLK0" TO "TNM_SP0_GCLK_IDATA" TIG;
+TIMESPEC "TS_SP0_PCLK_GCLK_IDATA" = FROM "TNM_PCLK" TO "TNM_SP0_GCLK_IDATA" TIG;
+TIMESPEC "TS_SP0_GCLK_IDATA_PCLK" = FROM "TNM_SP0_GCLK_IDATA" TO "TNM_SCLK0" TIG;
+TIMESPEC "TS_SP0_DOUBLECYC_IDATA" = FROM "TNM_SP0_EN_IDATA"   TO "TNM_SP0_EN_IDATA" "TS_DCLK";
+
+#uncomment for older ISE WebPack (e.g., 10.3)
+NET "i_sp1/clkout"     TNM_NET = "TNM_SP1_GCLK_IDATA";
+#####NET "i_sp1/gclk_idata"     TNM_NET = "TNM_SP1_GCLK_IDATA";
+NET "i_sp1/en_idata"   TNM_NET = "TNM_SP1_EN_IDATA";
+TIMESPEC "TS_SP1_SCLK0_GCLK_IDATA" = FROM "TNM_SCLK0" TO "TNM_SP1_GCLK_IDATA" TIG;
+TIMESPEC "TS_SP1_PCLK_GCLK_IDATA" = FROM "TNM_PCLK" TO "TNM_SP1_GCLK_IDATA" TIG;
+TIMESPEC "TS_SP1_GCLK_IDATA_PCLK" = FROM "TNM_SP1_GCLK_IDATA" TO "TNM_SCLK0" TIG;
+TIMESPEC "TS_SP1_DOUBLECYC_IDATA" = FROM "TNM_SP1_EN_IDATA" TO "TNM_SP1_EN_IDATA" "TS_DCLK";
+
+#uncomment for older ISE WebPack (e.g., 10.3)
+NET "i_sp2/clkout"     TNM_NET = "TNM_SP2_GCLK_IDATA";
+#####NET "i_sp2/gclk_idata"     TNM_NET = "TNM_SP2_GCLK_IDATA";
+NET "i_sp2/en_idata"   TNM_NET = "TNM_SP2_EN_IDATA";
+TIMESPEC "TS_SP2_SCLK0_GCLK_IDATA" = FROM "TNM_SCLK0" TO "TNM_SP2_GCLK_IDATA" TIG;
+TIMESPEC "TS_SP2_PCLK_GCLK_IDATA" = FROM "TNM_PCLK" TO "TNM_SP2_GCLK_IDATA" TIG;
+TIMESPEC "TS_SP2_GCLK_IDATA_PCLK" = FROM "TNM_SP2_GCLK_IDATA" TO "TNM_SCLK0" TIG;
+TIMESPEC "TS_SP2_DOUBLECYC_IDATA" = FROM "TNM_SP2_EN_IDATA"   TO "TNM_SP2_EN_IDATA" "TS_DCLK";
+
+
+
+TIMESPEC "TS_SCLK0" = PERIOD "TNM_SCLK0" "TS_DCLK";
+
+
+NET "sensor_clock" TNM = "SENSOR_CLK";
+TIMESPEC "TS_SC" = PERIOD "SENSOR_CLK" 8.5 ns HIGH 50%;
+
+# next 3 are probably not needed now when we use ODDR2. Problem before was that GCLK could not be
+# routed directly to OBUF and sesnor_clock used side DCM and local eires - even to DCM inputs.
+# Using ODDR2 on teh output (constant values on D-inputs) allow GCLK to be routed to the IOB
+
+INST "BUFGMUX_inst"  LOC = "BUFGMUX_X2Y10"; #Somewhere on top
+INST "BUFGMUX_inst" TPSYNC="TP_SENSOR_CLOCK_SOURCE";
+TIMESPEC "TS_SENSOR_CLOCK_TO_PADS_DCM" = FROM "TP_SENSOR_CLOCK_SOURCE" TO "SENSOR_CLK" 5ns;
+
+
+
+
+
+# new above
+
+
+#TIMESPEC "TS_PCLK" = PERIOD "pclk" 9.0 ns HIGH 50 %;
+
+#TIMESPEC "TS_CLK0" = PERIOD "CLK0" 6.0 ns HIGH 50 %;
+#TIMESPEC "TS_CLK2" = PERIOD "CLK2" "TS_CLK0";
+#TIMESPEC "TS_CLK1" = PERIOD "CLK1" "TS_CLK0";
+
+
+
+
+
+
+
+
+
+
+
+NET "i_sp0/en_idata" TNM_NET = "TNM_EN_IDATA0";
+NET "i_sp1/en_idata" TNM_NET = "TNM_EN_IDATA1";
+NET "i_sp2/en_idata" TNM_NET = "TNM_EN_IDATA2";
+
+TIMESPEC "TS_DOUBLECYC_IDATA0" = FROM "TNM_EN_IDATA0" TO "TNM_EN_IDATA0" "TS_SCLK0";
+TIMESPEC "TS_DOUBLECYC_IDATA1" = FROM "TNM_EN_IDATA1" TO "TNM_EN_IDATA1" "TS_SCLK1";
+TIMESPEC "TS_DOUBLECYC_IDATA2" = FROM "TNM_EN_IDATA2" TO "TNM_EN_IDATA2" "TS_SCLK2";
+
+TIMEGRP "ALLPADS"=     pads("*");
+
+NET "SDA0*" TNM_NET = "SDA0";
+
+# timing constraints for registers
+
+TIMEGRP "TG_CHMUX"= ffs("chn_mux*");
+TIMEGRP "TG_CHDL"= ffs("*_dl*");
+NET "PXD*" TNM = TNM_PXD;
+NET "PX_*" TNM = TNM_PX;
+TIMEGRP "TG_DIR"= ffs("*_direct*");
+
+#TIMESPEC TS_PXD_CHDL = FROM TNM_PXD TO TG_CHDL 8 ns;
+TIMESPEC TS_PX_CHDL = FROM TNM_PX TO TG_CHDL 8 ns;
+
+TIMESPEC TS_CHMUX_DIR = FROM TG_CHMUX TO TG_DIR 6.700 ns;
+TIMESPEC TS_CHDL_DIR = FROM TG_CHDL TO TG_DIR 6.700 ns;
+
+TIMEGRP "TG_ch0"= ffs("i_mcontr/i_channel0/*");
+
+TIMEGRP "TG_enSDRAM"= ffs("i_mcontr/*");
+TIMEGRP "TG_SDDO_REG"= ffs("i_mcontr/sddo*");
+TIMEGRP "TG_PRE2_REG"= ffs("i_mcontr/pre2*");
+
+NET "da_*"  TNM= TNM_DAs;
+
+TIMEGRP "TG_I2C_REG_ADDR"= ffs("i2c_reg_addr*");
+TIMEGRP "TG_I2C_CNT"= ffs("i2c_cnt*");
+
+TIMESPEC TS_I2C_RA_DAs   = FROM TG_I2C_REG_ADDR TO TNM_DAs 9 ns;
+TIMESPEC TS_I2C_CT_DAs   = FROM TG_I2C_CNT      TO TNM_DAs 9 ns;
+
+# timing constraints for channel counters
+
+TIMEGRP "TG_PRE4ACT1" = ffs("*pre4act1");
+TIMEGRP "TG_PRE4ACT2" = ffs("*pre4act2");
+TIMEGRP "TG_PRE3SDA" = ffs("*pre3sda*");
+
+# new freedom
+TIMEGRP "TG_ALL_SYNC"=      FFS RAMS;
+
+#new cheat
+TIMEGRP "TG_ihact" = ffs("*ihact*");
+TIMESPEC TS_ihact_ihact   = FROM TG_ihact TO TG_ihact 8 ns;
+
+TIMEGRP "TG_ivact" = ffs("*ivact*");
+TIMESPEC TS_ivact_ivact   = FROM TG_ivact TO TG_ivact 8 ns;
+
+# sensors data constraints
+
+TIMEGRP "TG_ALL_FFS" = ffs("*");
+NET "*"  TNM= TNM_ALL_NETS;
+
+NET "PXD*"  TNM= TNM_PXD_NETS;
+
+TIMEGRP "TG_SENSOR_DATA_PADS"=     pads("PXD*");
+
+TIMEGRP "TG_SP_IDI" = ffs("*idi*");
+
+#TIMESPEC TS_SDP_SP_IDI   = FROM TG_SENSOR_DATA_PADS TO TG_ALL_FFS 6 ns;
+#TIMESPEC TS_SDP_ALLNETS_IDI   = FROM TNM_ALL_NETS TO TG_SP_IDI 6 ns;
+
+#TIMEGRP "TG_SP0_IDI" = ffs("i_sp0/idi*");
+#TIMEGRP "TG_SP1_IDI" = ffs("i_sp1/idi*");
+#TIMEGRP "TG_SP2_IDI" = ffs("i_sp2/idi*");
+#
+#TIMESPEC TS_PXDNETS_SP0_IDI   = FROM TNM_PXD_NETS TO TG_SP0_IDI 6 ns;
+#TIMESPEC TS_PXDNETS_SP1_IDI   = FROM TNM_PXD_NETS TO TG_SP1_IDI 6 ns;
+#TIMESPEC TS_PXDNETS_SP2_IDI   = FROM TNM_PXD_NETS TO TG_SP2_IDI 6 ns;
+
+#TIMEGRP "TG_HACT_PADS"=     pads("HACT*");
+#TIMEGRP "TG_SP_HACT" = ffs("*ihact*");
+#
+#NET "PX_HACT*"  TNM= TNM_HACT_NET;
+#
+#TIMEGRP "TG_SP0_HACT" = ffs("i_sp0/ihact*");
+#TIMEGRP "TG_SP1_HACT" = ffs("i_sp1/ihact*");
+#TIMEGRP "TG_SP2_HACT" = ffs("i_sp2/ihact*");
+#
+#TIMESPEC TS_HACTNET_SP0_HACT   = FROM TNM_HACT_NET TO TG_SP0_HACT 6 ns;
+#TIMESPEC TS_HACTNET_SP1_HACT   = FROM TNM_HACT_NET TO TG_SP1_HACT 6 ns;
+#TIMESPEC TS_HACTNET_SP2_HACT   = FROM TNM_HACT_NET TO TG_SP2_HACT 6 ns;
+
+TIMEGRP "TG_PXDR" = ffs("pxdr*");
+TIMESPEC TS_PXDR_SDP   = FROM TG_PXDR TO TG_SENSOR_DATA_PADS 8 ns;
+
+# resync blocks constraints
+NET "pclk" TNM_NET = "TNM_PCLK";
+
+#NET "i_sp0/gclk_idata" TNM_NET = "TNM_SP0_GCLK_IDATA";
+#NET "i_sp0/en_idata"   TNM_NET = "TNM_SP0_EN_IDATA";
+#
+#TIMESPEC "TS_SP0_PCLK_GCLK_IDATA" = FROM "TNM_PCLK" TO "TNM_SP0_GCLK_IDATA" TIG;
+#TIMESPEC "TS_SP0_GCLK_IDATA_PCLK" = FROM "TNM_SP0_GCLK_IDATA" TO "TNM_PCLK" TIG;
+#TIMESPEC "TS_SP0_DOUBLECYC_IDATA" = FROM "TNM_SP0_EN_IDATA" TO "TNM_SP0_EN_IDATA" "TS_SCLK0";
+
+#NET "i_sp1/gclk_idata" TNM_NET = "TNM_SP1_GCLK_IDATA";
+#NET "i_sp1/en_idata"   TNM_NET = "TNM_SP1_EN_IDATA";
+#
+#TIMESPEC "TS_SP1_PCLK_GCLK_IDATA" = FROM "TNM_PCLK" TO "TNM_SP1_GCLK_IDATA" TIG;
+#TIMESPEC "TS_SP1_GCLK_IDATA_PCLK" = FROM "TNM_SP1_GCLK_IDATA" TO "TNM_PCLK" TIG;
+#TIMESPEC "TS_SP1_DOUBLECYC_IDATA" = FROM "TNM_SP1_EN_IDATA" TO "TNM_SP1_EN_IDATA" "TS_SCLK0";
+
+#NET "i_sp2/gclk_idata" TNM_NET = "TNM_SP2_GCLK_IDATA";
+#NET "i_sp2/en_idata"   TNM_NET = "TNM_SP2_EN_IDATA";
+
+#TIMESPEC "TS_SP2_PCLK_GCLK_IDATA" = FROM "TNM_PCLK" TO "TNM_SP2_GCLK_IDATA" TIG;
+#TIMESPEC "TS_SP2_GCLK_IDATA_PCLK" = FROM "TNM_SP2_GCLK_IDATA" TO "TNM_PCLK" TIG;
+#TIMESPEC "TS_SP2_DOUBLECYC_IDATA" = FROM "TNM_SP2_EN_IDATA" TO "TNM_SP2_EN_IDATA" "TS_SCLK0";
+
+NET "i_sp*/phase_hact_sel_sync*" TIG;
+NET "ARO" CLOCK_DEDICATED_ROUTE = FALSE;
+
+# my new constraints
+#TIMEGRP "TG_FISUM" = ffs("fisum*");
+TIMEGRP "TG_FOSUM" = ffs("fosum*");
+#
+#TIMESPEC "TS_ALL_FISUM" = FROM TG_ALL_FFS TO TG_FISUM TS_SCLK0;
+TIMESPEC "TS_ALL_FOSUM" = FROM TG_ALL_FFS TO TG_FOSUM TS_SCLK0;
+#
+#TIMESPEC "TS_FISUM_ALL" = FROM TG_FISUM TO TG_ALL_FFS TS_SCLK0;
+TIMESPEC "TS_FOSUM_ALL" = FROM TG_FOSUM TO TG_ALL_FFS TS_SCLK0;
+#
+#TIMEGRP "TG_I2CRDAT" = ffs("i2c_rdat*");
+#
+#TIMESPEC "TS_ALL_I2CRDAT" = FROM TG_ALL_FFS TO TG_I2CRDAT 10.501 ns;

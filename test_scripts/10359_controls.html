@@ -1,0 +1,857 @@
+<html>
+<!--
+/*!*******************************************************************************
+*! FILE NAME  : 10359_controls.html
+*! DESCRIPTION: 10359 UI
+*! Copyright (C) 2009 Elphel, Inc
+*! -----------------------------------------------------------------------------**
+*!  This program is free software: you can redistribute it and/or modify
+*!  it under the terms of the GNU General Public License as published by
+*!  the Free Software Foundation, either version 3 of the License, or
+*!  (at your option) any later version.
+*!
+*!  This program is distributed in the hope that it will be useful,
+*!  but WITHOUT ANY WARRANTY; without even the implied warranty of
+*!  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+*!  GNU General Public License for more details.
+*!
+*!  You should have received a copy of the GNU General Public License
+*!  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+*! -----------------------------------------------------------------------------**
+*!  $Log: 10359_controls.html,v $
+*!  Revision 1.10  2010/05/13 17:20:18  dzhimiev
+*!  1. for 10359 revA, should be compatible with rev0
+*!  2. new command system
+*!  3. recoded for Eyesis
+*!
+<<<<<<< 10359_controls.html
+<<<<<<< 10359_controls.html
+=======
+*!  Revision 1.4  2009/11/06 19:05:04  dzhimiev
+*!  SDRAM phase shift
+=======
+*!  Revision 1.8  2010/01/04 05:32:27  dzhimiev
+*!  1. added scale factor - for combined mode mostly, scale factor is set avoiding camvc
+*!
+*!  Revision 1.7  2009/12/14 23:02:15  oneartplease
+*!  turned header into <h1>
+*!
+*!  Revision 1.6  2009/12/04 03:40:15  dzhimiev
+*!  1. removed frame size setting - replaced with getting it from the sensor
+*!
+*!  Revision 1.5  2009/12/02 04:44:25  dzhimiev
+*!  1. added and option for combining alternating frames into one
+*!  2. changed some names for convenience
+>>>>>>> 1.8
+*!
+>>>>>>> 1.4
+*!
+*/
+-->
+
+<head><title>359 controls page </title></head>
+<body>
+
+<h1>10359 board controls</h1><br>
+
+<table border="0" bgcolor="#EFEFEF">
+<td>
+	<table>
+
+		<tr border="0" cellpadding="0" bgcolor="#D7F7D7">
+		  <td>
+		    Use sensors (J2,J3,J4)
+		  </td>
+		  <td>
+		    <input type="checkbox" id="j2_on" readonly checked>
+		    <input type="checkbox" id="j3_on" checked>
+		    <input type="checkbox" id="j4_on" >
+		  </td>
+		</tr>
+
+		<tr border="0" cellpadding="0" bgcolor="#C7F7C7">
+		  <td>
+		    Switch to channel  : 
+		    <input title="reg_35" style="width:30px;text-align:right" type="text" id="reg_35" value="7"/>
+		  </td>
+		  <td>
+		    <input type="button" id="btn_switch" value="apply" onClick="brd359_channel_switch('reg_35');" style="width:60px"/>
+		  </td>
+		</tr>
+
+		<tr border="0" cellpadding="0" bgcolor="#D7F7D7">
+		  <td>
+		    Sensor test mode ON/OFF
+		  </td>
+		  <td>
+		    <input type="button" id="btn_toggle_test" value="toggle" onClick="brd359_toggle_test_mode();"  style="width:60px"/>
+		  </td>
+		</tr>
+
+		<tr><td>&nbsp</td></tr>
+	</table>
+	<table>	
+		<tr border="0" cellpadding="2" bgcolor="#D7F7D7">
+		  <td>
+		    Number of phase steps:&nbsp&nbsp
+		    <input title="N_phase_steps" style="width:35px;text-align:right" type="text" id="N_phase_steps" value="5" /> 
+		  </td>
+		</tr>
+
+		<tr border="0" cellpadding="2" bgcolor="#C7F7C7">
+		  <td>
+		    SCLK0 phase 
+		  </td>
+		  <td>
+		    <input type="button" id="btn_sclk0_phase_plus" value="+" onClick="brd359_phase_shift(0,1);" style="width:30px"/>
+		    <input title="sclk0_phase" style="width:35px;text-align:right" type="text" id="sclk0_phase" value="0" readonly/> 
+		    <input type="button" id="btn_sclk0_phase_minus" value="-" onClick="brd359_phase_shift(0,2);" style="width:30px"/>
+		  </td>
+		  <td>&nbsp&nbsp
+		  </td>
+		  <td>
+		    <input type="button" id="btn_sclk0_clk_plus" value="<" onClick="brd359_phase_shift(0,4);" style="width:30px"/>
+		    <input title="sclk0_quarter" style="width:35px;text-align:right" type="text" id="sclk0_quarter" value="0" readonly align=left/>
+		    <input type="button" id="btn_sclk0_clk_minus" value=">" onClick="brd359_phase_shift(0,8);" style="width:30px"/>
+		  </td>
+		 </tr>
+
+		<tr border="0" cellpadding="2" bgcolor="#D7F7D7">
+		  <td>
+		    Channel 0 phase
+		  </td>
+		  <td>
+		    <input type="button" id="btn_ch0_phase_plus" value="+" onClick="brd359_phase_shift(1,1);" style="width:30px"/>
+		    <input title="ch0_phase" style="width:35px;text-align:right" type="text" id="ch0_phase" value="0" readonly align=right/>
+		    <input type="button" id="btn_ch0_phase_minus" value="-" onClick="brd359_phase_shift(1,2);" style="width:30px"/>
+		  </td>
+		  <td>&nbsp&nbsp
+		  </td>
+		  <td>
+		    <input type="button" id="btn_ch0_clk_plus" value="<" onClick="brd359_phase_shift(1,4);" style="width:30px"/>
+		    <input title="ch0_quarter" style="width:35px;text-align:right" type="text" id="ch0_quarter" value="0" readonly align=left/>
+		    <input type="button" id="btn_ch0_clk_minus" value=">" onClick="brd359_phase_shift(1,8);" style="width:30px"/>
+		  </td>
+		</tr>
+
+		<tr border="0" cellpadding="2" bgcolor="#C7F7C7">
+		  <td>
+		    Channel 1 phase
+		  </td>
+		  <td> 
+		    <input type="button" id="btn_ch1_phase_plus" value="+" onClick="brd359_phase_shift(2,1);" style="width:30px"/>
+		    <input title="ch1_phase" style="width:35px;text-align:right" type="text" id="ch1_phase" value="0" readonly/> 
+		    <input type="button" id="btn_ch1_phase_minus" value="-" onClick="brd359_phase_shift(2,2);" style="width:30px"/>
+		  </td>
+		  <td>&nbsp&nbsp
+		  </td>
+		  <td>
+		    <input type="button" id="btn_ch1_clk_plus" value="<" onClick="brd359_phase_shift(2,4);" style="width:30px"/>
+		    <input title="ch1_quarter" style="width:35px;text-align:right" type="text" id="ch1_quarter" value="0" readonly align=left/>
+		    <input type="button" id="btn_ch1_clk_minus" value=">" onClick="brd359_phase_shift(2,8);" style="width:30px"/>
+		  </td>
+		 </tr>
+
+		<tr border="0" cellpadding="2" bgcolor="#D7F7D7">
+		  <td>
+		    Channel 2 phase
+		  </td>
+		  <td> 
+		    <input type="button" id="btn_ch2_phase_plus" value="+" onClick="brd359_phase_shift(3,1);" style="width:30px"/>
+		    <input title="ch2_phase" style="width:35px;text-align:right" type="text" id="ch2_phase" value="0" readonly/> 
+		    <input type="button" id="btn_ch2_phase_minus" value="-" onClick="brd359_phase_shift(3,2);" style="width:30px"/>
+		  </td>
+		  <td>&nbsp&nbsp
+		  </td>
+		  <td>
+		    <input type="button" id="btn_ch2_clk_plus" value="<" onClick="brd359_phase_shift(3,4);" style="width:30px"/>
+		    <input title="ch2_quarter" style="width:35px;text-align:right" type="text" id="ch2_quarter" value="0" readonly align=left/>
+		    <input type="button" id="btn_ch2_clk_minus" value=">" onClick="brd359_phase_shift(3,8);" style="width:30px"/>
+		  </td>
+		</tr>
+
+		<tr border="0" cellpadding="2" bgcolor="#C7F7C7">
+		  <td align=right>
+		    <input type="button" id="btn_auto_phases" value="Auto adjust" onClick="brd359_auto_phases();"/>
+		    <input type="button" id="btn_save_phases" value="Save" onClick="brd359_save_phases();"/>
+		  </td>
+		 </tr>
+
+		<tr><td>&nbsp</td></tr>
+	</table>
+
+	<table>	
+		<tr border="0" cellpadding="2" bgcolor="#C7F7C7">
+		  <td>
+		    SDRAM clock&nbsp&nbsp
+		  </td>
+		  <td>
+		    <input type="button" id="btn_sdram_clk_plus" value="<" onClick="brd359_sdram_clk_shift(4,4);" style="width:30px"/>
+		    <input title="sdram_clk" style="width:55px;text-align:right" type="text" id="sdram_clk" value="sclk0" readonly align=left/>
+		    <input type="button" id="btn_sdram_clk_minus" value=">" onClick="brd359_sdram_clk_shift(4,8);" style="width:30px"/>
+		  </td>
+		</tr>
+
+		<tr border="0" cellpadding="2" bgcolor="#D7F7D7">
+		  <td>
+		    Clock phase&nbsp&nbsp&nbsp&nbsp
+		  </td>
+		  <td>
+		    <input type="button" id="btn_sdram_clk_phase_plus" value="+" onClick="brd359_phase_shift(4,1);" style="width:30px"/>
+		    <input title="ch3_phase" style="width:55px;text-align:right" type="text" id="ch3_phase" value="0" readonly align=right/>
+		    <input type="button" id="btn_sdram_clk_phase_minus" value="-" onClick="brd359_phase_shift(4,2);" style="width:30px"/>
+		  </td>
+		</tr>
+
+		<tr><td>&nbsp</td></tr>
+	</table>
+
+	<table>
+		<tr border="0" cellpadding="2" bgcolor="#C7F7C7">
+		    <td>
+		      Combine into one frame
+		    </td>
+		    <td align=center>
+		      <input type="checkbox" id="combine_into_one_frame" checked>
+		    </td>
+		</tr>
+		<tr border="0" cellpadding="2" bgcolor="#D7F7D7">
+		    <td>
+		      Scale factor
+		    </td>
+		    <td>
+		      <input title="scale_factor" style="width:50px;text-align:right" type="text" id="scale_factor" value="1" />
+		    </td>
+		</tr>
+		<tr border="0" cellpadding="2" bgcolor="#D7F7D7">
+		  <td>
+		    Alternation mode with buffering:
+		  </td>
+		  <td>
+		    <input type="button" style="width:50px" id="btn_alt_buf_mode" value="start" onClick="brd359_alt_buf_mode();"/>
+		  </td>
+		</tr>
+
+		<tr><td>&nbsp</td></tr>
+
+		<tr border="0" cellpadding="2" bgcolor="#C7F7C7">
+		  <td>
+		    Alternation mode:
+		  </td>
+		  <td>
+		    <input type="button" style="width:50px" id="btn_alt_mode" value="start" onClick="brd359_alt_mode();"/>
+		  </td>
+		</tr>
+
+		<tr><td>&nbsp</td></tr>
+
+		<tr border="0" cellpadding="2" bgcolor="#C7F7C7">
+		  <td>
+		    <input type="button" style="width:150px" id="btn_stereo_mode" value="Stereo mode" onClick="brd359_stereo_mode();"/>
+		  </td>
+		</tr>
+
+		<tr><td>&nbsp</td></tr>
+	</table>
+	
+	<table id="rq_table" border="0" cellpadding="2" bgcolor="#C7F7C7">
+		<tr>
+		  <td>
+		    Request line 
+		  </td>
+		</tr>
+
+		<tr>
+		  <td>
+		    <input title="status_reg" style="width:350px" type="text" id="status_reg" value="" readonly/>&nbsp 
+		  </td>
+		</tr>
+	</table>
+</td>
+<td valign="top">
+	<table>	
+		<tr border="0" cellpadding="2" bgcolor="#D7F7D7">
+		  <td>
+		    <input type="button" id="btn_read_regs" value="read registers" onClick="brd359_read_regs();"/>
+		  </td>
+		</tr>
+
+		<tr><td>
+		    <table>
+			<tr> 
+			  <td>
+			    Firmware Version:
+			  </td>
+			  <td>
+			    <input title="firmware_version" style="width:80px" type="text" id="reg_00" value="" readonly/>
+			  </td>
+			</tr>
+			<tr>
+			  <td>
+			    Current Channel:
+			  </td>
+			  <td>
+			    <input title="reg_0x01" style="width:80px" type="text" id="reg_01" value="" readonly/>
+			  </td>
+			</tr>
+			<tr>
+			  <td>
+			    Reg 0x02:
+			  </td>
+			  <td>
+			    <input title="reg_0x02" style="width:80px" type="text" id="reg_02" value="" readonly/>
+			  </td>
+			</tr>
+			<tr>
+			  <td>
+			    Reg 0x03h(pclk):
+			  </td>
+			  <td>
+			    <input title="reg_0x03h" style="width:80px" type="text" id="reg_03h" value="" readonly/>
+			  </td>
+			</tr>
+			<tr>
+			  <td>
+			    Reg 0x03l(sclk0):
+			  </td>
+			  <td>
+			    <input title="reg_0x03l" style="width:80px" type="text" id="reg_03l" value="" readonly/>
+			  </td>
+			</tr>
+			<tr>
+			  <td>
+			    Reg 0x05:
+			  </td>
+			  <td>
+			    <input title="reg_0x05" style="width:80px" type="text" id="reg_05" value="" readonly/>
+			  </td>
+			</tr>
+			<tr>
+			  <td>
+			    Reg 0x06:
+			  </td>
+			  <td>
+			    <input title="reg_0x06" style="width:80px" type="text" id="reg_06" value="" readonly/>
+			  </td>
+			</tr>
+			<tr>
+			  <td>
+			    Reg 0x07:
+			  </td>
+			  <td>
+			    <input title="reg_0x07" style="width:80px" type="text" id="reg_07" value="" readonly/>
+			  </td>
+			</tr>
+			<tr>
+			  <td>
+			    Reg 0x20:
+			  </td>
+			  <td>
+			    <input title="reg_0x20" style="width:80px" type="text" id="reg_20" value="" readonly/>
+			  </td>
+			</tr>
+			<tr>
+			  <td>
+			    Reg 0x44:
+			  </td>
+			  <td>
+			    <input title="reg_0x44" style="width:80px" type="text" id="reg_44" value="" readonly/>
+			  </td>
+			</tr>
+		  </td>
+		</tr>
+		    </table>
+		</td></tr>
+
+		<tr><td>&nbsp</td></tr>
+	</table>
+</td>
+</table>
+
+<!-- status -->
+
+<script language="javascript"><!--
+
+	brd359_init_field_values();
+
+	function brd359_init_field_values(){
+	      document.getElementById("reg_35").value = 7;
+	      document.getElementById("N_phase_steps").value = 5;
+
+	      document.getElementById("sclk0_phase").value = 0;
+
+	      document.getElementById("ch0_phase").value = 0;
+	      document.getElementById("ch1_phase").value = 0;
+	      document.getElementById("ch2_phase").value = 0;
+	      //sdram phase
+	      document.getElementById("ch3_phase").value = 0;
+
+	      document.getElementById("scale_factor").value = 1;
+	      document.getElementById("scale_factor").title = "Valid resolutions in CAMVC for combined mode: f=1 - any; f=2 - 1296x1920; f=3 - 864x1280; f=4 - 640x960; f=5 - 512x768;";
+
+	      document.getElementById("status_reg").value = null;
+	      document.getElementById("reg_00").value = null;
+	      document.getElementById("reg_01").value = null;
+	      document.getElementById("reg_02").value = null;
+	      document.getElementById("reg_03h").value = null;
+	      document.getElementById("reg_03l").value = null;
+	      document.getElementById("reg_05").value = null;
+	      document.getElementById("reg_06").value = null;
+	      document.getElementById("reg_07").value = null;
+	      document.getElementById("reg_20").value = null;
+	      document.getElementById("reg_44").value = null;
+	}
+
+	function brd359_channel_switch(_id) {
+		chn = document.getElementById(_id).value;
+		request = "./reg_write.php?adr=0x806&data=" + chn;
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_standard_response(request);
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	var toggle_test_mode=false;
+
+	function brd359_toggle_test_mode() {
+
+		if (toggle_test_mode) {
+		  toggle_test_mode=false;
+		  request = "./reg_write.php?adr=0x48a0&data=0x00";
+		}else{
+		  toggle_test_mode=true;
+		  request = "./reg_write.php?adr=0x48a0&data=0x41";
+		}
+		
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_standard_response(request);
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	function brd359_sdram_clk_shift(_dcm,_ps) {
+		request = "./phases_adjust.php?dcm="+ _dcm + "&n=1&phase_shift=" + _ps;
+
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_sdram_clk_shift_response(request,_dcm,_ps);
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	function brd359_sdram_clk_shift_response(_rq,_chn,_ps) {
+
+	    pre_current_phase=document.getElementById("sdram_clk").value;
+	    
+	    current_phase = pre_current_phase.substring(4,8); // 8 is just to be sure
+
+	    document.getElementById("status_reg").value = _rq;//"ch"+ +_chn +"_phase";
+
+	    if (_ps==8) current_phase = +current_phase - 90;
+	    else        current_phase = +current_phase + 90;
+
+	    if (current_phase == -90) current_phase = 270;
+	    if (current_phase == 360) current_phase = 0;
+
+	    document.getElementById("sdram_clk").value = "sclk" + current_phase;
+
+	}
+
+	function brd359_phase_shift(_dcm,_ps) {
+		if (_ps<4) n = document.getElementById("N_phase_steps").value;
+		else       n = 1;
+
+		request = "./phases_adjust.php?dcm="+ _dcm + "&n=" + n + "&phase_shift=" + _ps;
+
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_phase_shift_response(request,_dcm,_ps,n);
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	function brd359_phase_shift_response(_rq,_chn,_ps,_n) {
+
+	    if (_chn==0) field="sclk0";
+	    else         field="ch"+ (+_chn-1);
+
+	    if (_ps<4) field=field+"_phase";
+	    else       field=field+"_quarter";
+
+	    current_phase=document.getElementById(field).value;
+
+	    document.getElementById("status_reg").value = _rq;//"ch"+ +_chn +"_phase";
+
+	    if      (_ps==2) document.getElementById(field).value = +current_phase - +_n;
+	    else if (_ps==1) document.getElementById(field).value = +current_phase + +_n;
+	    else if (_ps==4) {
+	      if (current_phase==3) document.getElementById(field).value = 0;
+	      else                  document.getElementById(field).value = +current_phase + +_n;
+	    }
+	    else if (_ps==8) {
+	      if (current_phase==0) document.getElementById(field).value = 3;
+	      else                  document.getElementById(field).value = +current_phase - +_n;
+	    }
+
+	}
+
+	function brd359_auto_phases() {
+		request = "./../test/test_inner_10359.php";
+
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_auto_phases_response;//brd359_auto_phases_response();
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	function brd359_auto_phases_response() {
+		if(this.readyState == 1){
+
+		  document.getElementById('status_reg').value="Working...";
+
+		  //document.getElementById('rq_table').setAttribute('bgcolor','#FFD700');
+		}
+		if(this.readyState == 4) {
+			if(this.status != 200) {
+				alert("failed to start");
+				return;
+			}
+
+			//document.getElementById("status_reg2").value = _rq;
+			//xml = this.responseXML.getElementsByTagName("registers_read")[0];
+			//document.getElementById('rq_table').setAttribute('bgcolor','#C7F7C7');
+			document.getElementById('status_reg').value = "./../test/test_inner_10359.php";
+
+		}
+	}
+
+	function brd359_save_phases() {
+
+		sclk0_00= document.getElementById('sclk0_phase').value;
+		sclk0_90= document.getElementById('sclk0_quarter').value;
+
+		ch0_00= document.getElementById('ch0_phase').value;
+		ch0_90= document.getElementById('ch0_quarter').value;
+
+		ch1_00= document.getElementById('ch1_phase').value;
+		ch1_90= document.getElementById('ch1_quarter').value;
+
+		ch2_00= document.getElementById('ch2_phase').value;
+		ch2_90= document.getElementById('ch2_quarter').value;
+
+		request = "./../test/test_inner_10359.php?save&dcm0_90="+sclk0_90+"&dcm0="+sclk0_00+"&dcm1_90="+ch0_90+"&dcm1="+ch0_00+"&dcm2_90="+ch1_90+"&dcm2="+ch1_00+"&dcm3_90="+ch2_90+"&dcm3="+ch2_00;
+
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_save_phases_response;
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	function brd359_save_phases_response() {
+		if(this.readyState == 1){
+
+		  document.getElementById('status_reg').value="Working...";
+
+		  //document.getElementById('rq_table').setAttribute('bgcolor','#FFD700');
+		}
+		if(this.readyState == 4) {
+			if(this.status != 200) {
+				alert("failed to start");
+				return;
+			}
+
+			//document.getElementById("status_reg2").value = _rq;
+			//xml = this.responseXML.getElementsByTagName("registers_read")[0];
+			//document.getElementById('rq_table').setAttribute('bgcolor','#C7F7C7');
+			document.getElementById('status_reg').value = "./../test/test_inner_10359.php";
+
+		}
+	}
+
+
+
+
+
+
+
+
+	function brd359_alt_mode() {
+
+		if (document.getElementById('btn_alt_mode').value=="start") {
+			if (document.getElementById('j3_on').checked) {
+				request = "./reg_write.php?adr=0x806&data=0x27";
+			} else if (document.getElementById('j4_on').checked) {
+				request = "./reg_write.php?adr=0x806&data=0x67";
+			} else {
+				alert("An extra sensor needs to be checked");
+				return;
+			}
+			document.getElementById('btn_alt_mode').value = "stop";
+		} else {
+			request = "./reg_write.php?adr=0x806&data=0x7";
+			document.getElementById('btn_alt_mode').value = "start";
+		}
+
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_standard_response(request);
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	function brd359_alt_buf_mode() {
+
+		if (document.getElementById('btn_alt_buf_mode').value=="start") {
+			if (document.getElementById('combine_into_one_frame').checked) {
+
+				_scale_factor=document.getElementById("scale_factor").value;
+
+				if        (document.getElementById('j3_on').checked) {
+					request = "./10359_modes.php?mode=0&channel=2&combined&scale_factor=" + _scale_factor;
+				} else if (document.getElementById('j4_on').checked) {
+					request = "./10359_modes.php?mode=0&channel=4&combined&scale_factor=" + _scale_factor;
+				} else {
+					alert("An extra sensor needs to be checked");
+					return;
+				}
+			} else {
+				if        (document.getElementById('j3_on').checked) {
+					request = "./10359_modes.php?mode=0&channel=2";
+				} else if (document.getElementById('j4_on').checked) {
+					request = "./10359_modes.php?mode=0&channel=4";
+				} else {
+					alert("An extra sensor needs to be checked");
+					return;
+				}				
+			}
+
+			document.getElementById('btn_alt_buf_mode').value="stop";
+			document.getElementById('btn_alt_mode').value="start";
+			document.getElementById('combine_into_one_frame').disabled=true;
+			document.getElementById('btn_alt_mode').disabled=true;
+			document.getElementById('scale_factor').disabled=true;
+
+		} else {
+			if (document.getElementById('combine_into_one_frame').checked) {
+				_scale_factor=document.getElementById("scale_factor").value;
+				request = "./10359_modes.php?mode=0&combined&stop&scale_factor="  + _scale_factor;
+			} else {
+				request = "./10359_modes.php?mode=0&stop";
+			}
+			document.getElementById('btn_alt_buf_mode').value="start";
+			document.getElementById('combine_into_one_frame').disabled=false;
+			document.getElementById('btn_alt_mode').disabled=false;	
+			document.getElementById('scale_factor').disabled=false;		
+		}
+
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_standard_response(request);
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	function brd359_stereo_mode() {
+
+		if (document.getElementById('j3_on').checked) {
+		  request = "./10359_modes.php?mode=1&channel=2";
+		} else if (document.getElementById('j4_on').checked) {
+		  request = "./10359_modes.php?mode=1&channel=4";
+		} else {
+		  alert("An extra sensor needs to be checked");
+		  return;
+		}
+
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_standard_response(request);
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	function brd359_read_regs() {
+		request = "./reg_read.php";
+
+		if(window.XMLHttpRequest) {
+			brd359_xml = new XMLHttpRequest();
+			brd359_xml.onreadystatechange = brd359_read_regs_response;
+			brd359_xml.open("GET", request, true);
+			brd359_xml.send(null);
+		} else {
+			alert("not Firefox?");
+			return;
+		}
+	}
+
+	function brd359_read_regs_response() {
+		if(this.readyState == 1){
+		  document.getElementById('status_reg').value="Working...";
+		}
+		if(this.readyState == 4) {
+			if(this.status != 200) {
+				alert("failed to start");
+				return;
+			}
+
+			//document.getElementById("status_reg2").value = _rq;
+
+			xml = this.responseXML.getElementsByTagName("registers_read")[0];
+
+			version = xml.getElementsByTagName("reg_00")[0].textContent;			
+			document.getElementById('reg_00').value = version;
+
+			_data= xml.getElementsByTagName("reg_01")[0].textContent;
+			document.getElementById('reg_01').value = _data;
+			document.getElementById('reg_35').value = _data;
+
+			_data= xml.getElementsByTagName("reg_02")[0].textContent;
+			document.getElementById('reg_02').value = _data;
+
+			_data= xml.getElementsByTagName("reg_03_h")[0].textContent;
+			document.getElementById('reg_03h').value = _data;
+
+			_data= xml.getElementsByTagName("reg_03_l")[0].textContent;
+			document.getElementById('reg_03l').value = _data;
+
+			_data= xml.getElementsByTagName("reg_05")[0].textContent;
+			document.getElementById('reg_05').value = _data;
+
+			_data= xml.getElementsByTagName("reg_06")[0].textContent;
+			document.getElementById('reg_06').value = _data;
+
+			_data= xml.getElementsByTagName("reg_07")[0].textContent;
+			document.getElementById('reg_07').value = _data;
+
+			_data= xml.getElementsByTagName("reg_20")[0].textContent;
+			document.getElementById('reg_20').value = _data;
+
+			_data= xml.getElementsByTagName("reg_44")[0].textContent;
+			document.getElementById('reg_44').value = _data;
+
+			dcm0_phase = xml.getElementsByTagName("reg_47")[0].textContent;
+
+			dcm0_phase_ = parseInt(dcm0_phase,16);
+			dcm0_phase_00 = dcm0_phase_ & 0x3ff;
+			dcm0_phase_90 = dcm0_phase_ >> 16;
+
+			if (dcm0_phase_00 >256) {
+			  document.getElementById('sclk0_phase').value = dcm0_phase_00-512;
+			}else{
+			  document.getElementById('sclk0_phase').value = dcm0_phase_00;
+			}
+
+			document.getElementById('sclk0_quarter').value = dcm0_phase_90;
+
+
+			dcm4_phase = xml.getElementsByTagName("reg_60")[0].textContent;
+			dcm4_phase_h= parseInt(dcm4_phase,16);
+			dcm4_phase_l= parseInt(dcm4_phase,16) & 0x3ff;
+		
+			dcm4_phase_h = dcm4_phase_h >> 16;
+
+			document.getElementById('sdram_clk').value = "sclk" + (dcm4_phase_h*90);
+
+			if (dcm4_phase_l>256) {
+			  document.getElementById('ch3_phase').value = dcm4_phase_l-512;
+			}else{
+			  document.getElementById('ch3_phase').value = dcm4_phase_l;
+			}
+			
+			dcm1_phase = xml.getElementsByTagName("reg_61")[0].textContent;
+
+			dcm1_phase_ = parseInt(dcm1_phase,16);
+			dcm1_phase_00 = dcm1_phase_ & 0x3ff;
+			dcm1_phase_90 = dcm1_phase_ >> 16;
+
+			if (dcm1_phase_00 >256) {
+			  document.getElementById('ch0_phase').value = dcm1_phase_00-512;
+			}else{
+			  document.getElementById('ch0_phase').value = dcm1_phase_00;
+			}
+
+			document.getElementById('ch0_quarter').value = dcm1_phase_90;
+
+
+			dcm2_phase = xml.getElementsByTagName("reg_62")[0].textContent;
+
+			dcm2_phase_ = parseInt(dcm2_phase,16);
+			dcm2_phase_00 = dcm2_phase_ & 0x3ff;
+			dcm2_phase_90 = dcm2_phase_ >> 16;
+
+			if (dcm2_phase_00 >256) {
+			  document.getElementById('ch1_phase').value = dcm2_phase_00-512;
+			}else{
+			  document.getElementById('ch1_phase').value = dcm2_phase_00;
+			}
+
+			document.getElementById('ch1_quarter').value = dcm2_phase_90;
+
+
+			dcm3_phase = xml.getElementsByTagName("reg_63")[0].textContent;
+
+			dcm3_phase_ = parseInt(dcm3_phase,16);
+			dcm3_phase_00 = dcm3_phase_ & 0x3ff;
+			dcm3_phase_90 = dcm3_phase_ >> 16;
+
+			if (dcm3_phase_00 >256) {
+			  document.getElementById('ch2_phase').value = dcm3_phase_00-512;
+			}else{
+			  document.getElementById('ch2_phase').value = dcm3_phase_00;
+			}
+
+			document.getElementById('ch2_quarter').value = dcm3_phase_90;
+
+
+			document.getElementById('status_reg').value = "./reg_read.php";
+		}
+	}
+
+	function brd359_standard_response(_rq) {
+	    document.getElementById("status_reg").value = _rq;
+	}
+
+//-->
+</script>
+
+</body>
+</html>

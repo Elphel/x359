@@ -1,0 +1,35 @@
+[timestart] 0
+[size] 1298 774
+[pos] 245 60
+*-31.392126 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] x359_tf.
+[treeopen] x359_tf.i_x359.
+@200
+-Sensor 1
+@28
+x359_tf.i_x359.PX_DCLK1
+x359_tf.i_x359.PX_ARO1
+x359_tf.i_x359.PX_ARST1
+x359_tf.i_x359.PX_MRST1
+x359_tf.i_x359.PX_VACT1
+x359_tf.i_x359.PX_HACT1
+@22
+x359_tf.i_x359.PXD1[11:0]
+@200
+-
+-Memory
+@28
+x359_tf.i_x359.SDWE
+x359_tf.i_x359.SDCAS
+x359_tf.i_x359.SDRAS
+@22
+x359_tf.i_x359.SDD[15:0]
+x359_tf.i_x359.sddi_r[31:0]
+x359_tf.i_x359.sddo_p[31:0]
+@200
+-
+-System Clock
+@28
+x359_tf.i_x359.sclk0
+[pattern_trace] 1
+[pattern_trace] 0
