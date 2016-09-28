@@ -30,4 +30,7 @@ cocotb/Makefile
 cocotb/sim_build
 cocotb/results.xml
 *.directory
-/html.tar.gz
+html.tar.gz
+bitbake-logs                                                                                                                                               
+sysroots  
+
