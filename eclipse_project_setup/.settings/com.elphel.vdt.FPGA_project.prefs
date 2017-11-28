@@ -1,0 +1,7 @@
+FPGA_project_@_ImplementationTopFile=x359.v
+FPGA_project_@_SimulationTopFile=x359.tf
+FPGA_project_@_SimulationTopModule=testbench359
+FPGA_project_@_part=xc3s1200eft256-4
+com.elphel.store.context.FPGA_project=FPGA_project_@_SimulationTopFile<-@\#\#@->FPGA_project_@_SimulationTopModule<-@\#\#@->FPGA_project_@_ImplementationTopFile<-@\#\#@->FPGA_project_@_part<-@\#\#@->
+com.elphel.store.version.FPGA_project=1.0
+eclipse.preferences.version=1

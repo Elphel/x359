@@ -21,8 +21,8 @@ IVERILOG_INCLUDE.v
 debug/*
 html/*
 man/*
-.project
-.pydevproject
+/.project
+/.pydevproject
 #copied from .eclipse_project_setup, can be used to import workin set to limit warnings reported
 workingSet.psf
 *.fst
@@ -31,6 +31,8 @@ cocotb/sim_build
 cocotb/results.xml
 *.directory
 html.tar.gz
-bitbake-logs                                                                                                                                               
-sysroots  
+/bitbake-logs                                                                                                                                               
+/sysroots  
+/image
+/scripts
 
