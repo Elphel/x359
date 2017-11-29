@@ -23,6 +23,7 @@ html/*
 man/*
 /.project
 /.pydevproject
+/.settings
 #copied from .eclipse_project_setup, can be used to import workin set to limit warnings reported
 workingSet.psf
 *.fst
